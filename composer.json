@@ -7,7 +7,7 @@
     "xml",
     "search"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/sokolnikov911/yandex-xml",
   "license": "MIT",
   "authors": [
@@ -19,9 +19,7 @@
   ],
   "require": {
     "php": ">=7.3",
-    "ext-json": "*",
-    "ext-simplexml": "*",
-    "guzzlehttp/guzzle": "~7.2.0"
+    "guzzlehttp/guzzle": "^6.2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9"

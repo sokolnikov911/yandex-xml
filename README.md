@@ -53,7 +53,7 @@ composer.phar update
  
 ## Requirements
 
-This client requires at least PHP7 (yeahh, type hinting!) and [Guzzle](https://github.com/guzzle/guzzle) 7.
+This client requires at least PHP7 (yeahh, type hinting!) and [Guzzle](https://github.com/guzzle/guzzle) 6.
 
 
 ## License

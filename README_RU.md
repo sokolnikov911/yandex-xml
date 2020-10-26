@@ -52,7 +52,7 @@ composer.phar update
  
 ## Требования
 
-Этот API-клиент разработан для PHP7 (используется строгая типизация) и [Guzzle](https://github.com/guzzle/guzzle) 7.
+Этот API-клиент разработан для PHP7 (используется строгая типизация) и [Guzzle](https://github.com/guzzle/guzzle) 6.
 
 
 ## Лицензия
