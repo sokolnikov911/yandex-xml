@@ -77,11 +77,11 @@ class Client
         $this->key = $key;
         $this->selectedLanguage = $domainLanguage;
 
-        if (!$domainLanguage) {
+        if ($domainLanguage === null) {
             $this->selectedLanguage = self::DOMAIN_RU;
         }
 
-        if ($endpointUrl) {
+        if ($endpointUrl !== null) {
             $this->url = $endpointUrl;
         }
     }
@@ -146,7 +146,7 @@ class Client
             throw new YandexInvalidArgumentException();
         }
 
-        if (($type == self::SORT_BY_TM) && $direction) {
+        if (($type == self::SORT_BY_TM) && ($direction !== null)) {
             if (!in_array($direction, [self::SORTING_DIRECTION_ASC, self::SORTING_DIRECTION_DESC])) {
                 throw new YandexInvalidArgumentException();
             }
@@ -212,21 +212,21 @@ class Client
             throw new YandexInvalidArgumentException();
         }
 
-        if ($groupsOnPage && (($groupsOnPage < 1) || ($groupsOnPage > 100))) {
+        if (($groupsOnPage !== null) && (($groupsOnPage < 1) || ($groupsOnPage > 100))) {
             throw new YandexInvalidArgumentException();
         }
 
-        if ($docsInGroup && (($docsInGroup < 1) || ($docsInGroup > 3))) {
+        if (($docsInGroup !== null) && (($docsInGroup < 1) || ($docsInGroup > 3))) {
             throw new YandexInvalidArgumentException();
         }
 
         $this->groupByMode = $mode;
 
-        if ($groupsOnPage) {
+        if ($groupsOnPage !== null) {
             $this->groupByGroupsOnPage = $groupsOnPage;
         }
 
-        if ($docsInGroup) {
+        if ($docsInGroup !== null) {
             $this->groupByDocsInGroup = $docsInGroup;
         }
 
@@ -392,7 +392,7 @@ class Client
             if ($this->groupByMode) $params['groupby'] = $this->generateGroupByAttribute();
         }
 
-        if (!$params) {
+        if (!sizeof($params)) {
             throw new YandexException();
         }
 
