@@ -1,11 +1,11 @@
 PHP клиент для API поииска Yandex.XML
 =====================================
 
-[![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-xml/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-xml)
-[![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-xml/downloads)](https://packagist.org/packages/sokolnikov911/yandex-xml)
-[![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-xml/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-xml)
-[![License](https://poser.pugx.org/sokolnikov911/yandex-xml/license)](https://packagist.org/packages/sokolnikov911/yandex-xml)
-[![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-xml/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-xml)
+|  |  |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  | [![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-xml/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-xml) [![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-xml/downloads)](https://packagist.org/packages/sokolnikov911/yandex-xml) [![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-xml/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-xml) [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-xml/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-xml) [![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-xml/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-xml) [![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-xml/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-xml) |
+| Travis CI | [![Build Status](https://travis-ci.org/sokolnikov911/yandex-xml.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-xml) |
+| Scrutinizer CI | [![Build Status](https://scrutinizer-ci.com/g/sokolnikov911/yandex-xml/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-xml/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sokolnikov911/yandex-xml/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-xml/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/sokolnikov911/yandex-xml/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-xml/?branch=master) |
 
 
 PHP клиент для API поииска Yandex.XML.
