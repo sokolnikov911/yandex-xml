@@ -291,7 +291,7 @@ class Client
     /**
      * Retrieving search results
      *
-     * @return Client $client
+     * @return string Response body
      * @throws YandexException|ClientException|GuzzleException
      */
     public function get(): string
@@ -393,11 +393,11 @@ class Client
      *
      * @return array Action parameters array
      */
-    public function getActionParams(): array
+    private function getActionParams(): array
     {
-        $params['action'] = $this->action;
-
-        return $params;
+        return [
+            'action' => $this->action
+        ];
     }
 
     /**
@@ -405,9 +405,11 @@ class Client
      *
      * @return array Query parameters array
      */
-    public function getQueryParams(): array
+    private function getQueryParams(): array
     {
-        $params['query'] = $this->query;
+        $params = [
+            'query' => $this->query
+        ];
 
         if ($this->lr) $params['lr'] = $this->lr;
         if ($this->l10n) $params['l10n'] = $this->l10n;
