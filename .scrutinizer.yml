@@ -7,6 +7,10 @@ tools:
 
 build:
     nodes:
+        analysis:
+            tests:
+                override:
+                    - php-scrutinizer-run
         php73:
             environment:
                 postgresql: false
