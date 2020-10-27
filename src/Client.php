@@ -109,8 +109,8 @@ class Client
      * Set a response language
      *
      * @param string $l10n region id
-     * @throws YandexInvalidArgumentException
      * @return Client $client
+     * @throws YandexInvalidArgumentException
      */
     public function l10n(string $l10n): Client
     {
@@ -137,8 +137,8 @@ class Client
      *
      * @param string $type sorting type
      * @param string|null $direction (optional) sorting direction
-     * @throws YandexInvalidArgumentException
      * @return Client $client
+     * @throws YandexInvalidArgumentException
      */
     public function sortBy(string $type, ?string $direction = null): Client
     {
@@ -163,8 +163,8 @@ class Client
      * Set a filtering rules
      *
      * @param string $type filtering type
-     * @throws YandexInvalidArgumentException
      * @return Client $client
+     * @throws YandexInvalidArgumentException
      */
     public function filter(string $type): Client
     {
@@ -181,8 +181,8 @@ class Client
      * Set a maximum passages number
      *
      * @param integer $number maximum passages number
-     * @throws YandexInvalidArgumentException
      * @return Client $client
+     * @throws YandexInvalidArgumentException
      */
     public function maxPassages(int $number): Client
     {
@@ -201,8 +201,8 @@ class Client
      * @param string $mode grouping method
      * @param integer|null $groupsOnPage (optional) groups on page number
      * @param integer|null $docsInGroup (optional) documents in group number
-     * @throws YandexInvalidArgumentException
      * @return Client $client
+     * @throws YandexInvalidArgumentException
      */
     public function groupBy(string $mode,
                             ?int $groupsOnPage = null,
@@ -237,8 +237,8 @@ class Client
      * Set a page number
      *
      * @param integer $number page number. Starts from "0"
-     * @throws YandexInvalidArgumentException
      * @return Client $client
+     * @throws YandexInvalidArgumentException
      */
     public function page(int $number): Client
     {
@@ -291,8 +291,8 @@ class Client
     /**
      * Retrieving search results
      *
-     * @throws YandexException|ClientException|GuzzleException
      * @return Client $client
+     * @throws YandexException|ClientException|GuzzleException
      */
     public function get(): string
     {
@@ -371,35 +371,54 @@ class Client
     public function getEndpointUrlWithParams(): string
     {
         $url = $this->getEndpointUrl();
-        $params = [];
 
         if ($this->action) {
-            $params['action'] = $this->action;
+            $params = $this->getActionParams();
         } else {
             if (!$this->query) {
                 throw new YandexException();
             }
 
-            $params['query'] = $this->query;
-
-            if ($this->lr) $params['lr'] = $this->lr;
-            if ($this->l10n) $params['l10n'] = $this->l10n;
-            if ($this->page) $params['page'] = $this->page;
-            if ($this->showMeCaptcha) $params['showmecaptcha'] = $this->showMeCaptcha;
-            if ($this->maxPassages) $params['maxpassages'] = $this->maxPassages;
-            if ($this->filter) $params['filter'] = $this->filter;
-            if ($this->sortByType) $params['sortby'] = $this->generateSortByAttribute();
-            if ($this->groupByMode) $params['groupby'] = $this->generateGroupByAttribute();
-        }
-
-        if (!sizeof($params)) {
-            throw new YandexException();
+            $params = $this->getQueryParams();
         }
 
         $params['user'] = $this->user;
         $params['key'] = $this->key;
 
         return $url . '?' . http_build_query($params);
+    }
+
+    /**
+     * Generates action parameters array
+     *
+     * @return array Action parameters array
+     */
+    public function getActionParams(): array
+    {
+        $params['action'] = $this->action;
+
+        return $params;
+    }
+
+    /**
+     * Generates query parameters array
+     *
+     * @return array Query parameters array
+     */
+    public function getQueryParams(): array
+    {
+        $params['query'] = $this->query;
+
+        if ($this->lr) $params['lr'] = $this->lr;
+        if ($this->l10n) $params['l10n'] = $this->l10n;
+        if ($this->page) $params['page'] = $this->page;
+        if ($this->showMeCaptcha) $params['showmecaptcha'] = $this->showMeCaptcha;
+        if ($this->maxPassages) $params['maxpassages'] = $this->maxPassages;
+        if ($this->filter) $params['filter'] = $this->filter;
+        if ($this->sortByType) $params['sortby'] = $this->generateSortByAttribute();
+        if ($this->groupByMode) $params['groupby'] = $this->generateGroupByAttribute();
+
+        return $params;
     }
 
     /**
